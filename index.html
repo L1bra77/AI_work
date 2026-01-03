@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>咖啡科普 - 了解咖啡的世界</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- 自定义配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B4513', // 咖啡色
+                        secondary: '#D2691E', // 棕橙色
+                        accent: '#A0522D', // 红棕色
+                        dark: '#3E2723', // 深棕色
+                        light: '#F5F5DC' // 米色
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-light to-amber-50 min-h-screen font-sans text-dark">
+    <!-- 导航栏 -->
+    <nav class="bg-white/90 backdrop-blur-sm fixed w-full z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <i class="fa fa-coffee text-primary text-2xl mr-2"></i>
+                    <span class="text-xl font-bold text-primary">咖啡科普</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#intro" class="text-dark/70 hover:text-primary transition-colors">咖啡文化</a>
+                    <a href="#beans" class="text-dark/70 hover:text-primary transition-colors">咖啡豆种类</a>
+                    <a href="#varieties" class="text-dark/70 hover:text-primary transition-colors">咖啡品种</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <header class="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary/10 to-secondary/10">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="mb-8 flex justify-center">
+                <div class="relative w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-lg">
+                    <img src="./1.jpg" alt="咖啡图标" class="w-full h-full object-cover">
+                </div>
+            </div>
+            <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-dark mb-4 text-shadow">探索咖啡的世界</h1>
+            <p class="text-[clamp(1rem,2vw,1.25rem)] text-dark/70 mb-8">从咖啡豆到咖啡文化，全方位了解咖啡的魅力</p>
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <div class="flex items-center text-dark/70">
+                    <i class="fa fa-map-marker mr-2 text-primary"></i>
+                    <span>源于非洲，风行全球</span>
+                </div>
+                <div class="flex items-center text-dark/70">
+                    <i class="fa fa-leaf mr-2 text-primary"></i>
+                    <span>四大咖啡豆种类</span>
+                </div>
+                <div class="flex items-center text-dark/70">
+                    <i class="fa fa-cutlery mr-2 text-primary"></i>
+                    <span>多样的咖啡文化</span>
+                </div>
+            </div>
+            <a href="#intro" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all transform hover:-translate-y-1">
+                开始探索
+                <i class="fa fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- 咖啡文化介绍 -->
+        <section id="intro" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-dark text-center">咖啡文化</h2>
+            <div class="bg-white rounded-2xl shadow-xl p-8 card-hover">
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="w-full md:w-1/2">
+                        <h3 class="text-2xl font-semibold text-primary mb-4">咖啡馆：文化的交汇点</h3>
+                        <p class="text-dark/80 leading-relaxed mb-4">
+                            咖啡馆作为咖啡文化的标志性组成部分，是人们聚会、喝咖啡、处理工作的理想场所。在当代中国社会，年轻人群体聚会时几乎会选择咖啡馆，这种现象代表着一种文化趋势。
+                        </p>
+                        <p class="text-dark/80 leading-relaxed mb-4">
+                            咖啡最早起源于非洲，由欧洲发扬光大。如今，中国有潜力成为21世纪咖啡文化的领军者。星巴克将意大利式咖啡店的概念引入美国，开创了美国的咖啡文化先河，而意大利咖啡馆长期以来一直是社区聚会的重要场所。
+                        </p>
+                        <p class="text-dark/80 leading-relaxed">
+                            咖啡文化与中国的茶馆文化有异曲同工之妙，都是人们交流、放松的重要场所。无论哪种文化，核心都是围绕着饮品本身，让人们在忙碌的生活中找到片刻的宁静与享受。
+                        </p>
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-6">
+                            <img src="./2.jpg" alt="咖啡馆文化" class="w-full h-auto object-cover rounded-xl">
+                        </div>
+                        <div class="bg-primary/5 rounded-xl p-6 shadow-inner">
+                            <h4 class="text-xl font-semibold text-dark mb-4">咖啡文化的演变</h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fa fa-map-marker text-primary mt-1 mr-3"></i>
+                                    <div>
+                                        <span class="font-medium text-dark">非洲起源</span>
+                                        <p class="text-dark/70 text-sm">咖啡树最早生长在埃塞俄比亚高原</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-ship text-primary mt-1 mr-3"></i>
+                                    <div>
+                                        <span class="font-medium text-dark">欧洲传播</span>
+                                        <p class="text-dark/70 text-sm">17世纪咖啡传入欧洲，开始风靡</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-coffee text-primary mt-1 mr-3"></i>
+                                    <div>
+                                        <span class="font-medium text-dark">全球流行</span>
+                                        <p class="text-dark/70 text-sm">星巴克等连锁品牌推动咖啡全球化</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-leaf text-primary mt-1 mr-3"></i>
+                                    <div>
+                                        <span class="font-medium text-dark">中国崛起</span>
+                                        <p class="text-dark/70 text-sm">中国成为新兴的咖啡消费大国</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 咖啡豆种类 -->
+        <section id="beans" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-dark text-center">咖啡豆种类</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 阿拉比卡咖啡豆 -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden card-hover">
+                    <div class="bg-primary/10 px-6 py-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-2xl font-semibold text-dark">阿拉比卡咖啡豆</h3>
+                            <span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">占全球60%以上</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="rounded-lg overflow-hidden mb-4">
+                            <img src="./1_1.jpeg" alt="阿拉比卡咖啡豆" class="w-full h-48 object-cover rounded-lg">
+                        </div>
+                        <div class="flex items-start mb-4">
+                            <i class="fa fa-leaf text-primary text-2xl mt-1 mr-3"></i>
+                            <div>
+                                <p class="text-dark/80 leading-relaxed">
+                                    阿拉比卡咖啡主要产于拉丁美洲和非洲，是一种风味浓郁、口感复杂的咖啡豆。它具有丰富的果香、花香、坚果香和泥土气息，风味会根据产地和品种而变化。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-dark/70">风味浓郁，口感复杂</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-dark/70">对环境变化非常敏感</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-dark/70">适合热饮，最好直接享用黑咖啡</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 罗布斯塔咖啡豆 -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden card-hover">
+                    <div class="bg-primary/10 px-6 py-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-2xl font-semibold text-dark">罗布斯塔咖啡豆</h3>
+                            <span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">占全球30-40%</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="rounded-lg overflow-hidden mb-4">
+                            <img src="./1_2.jpeg" alt="罗布斯塔咖啡豆" class="w-full h-48 object-cover rounded-lg">
+                        </div>
+                        <div class="flex items-start mb-4">
+                            <i class="fa fa-leaf text-primary text-2xl mt-1 mr-3"></i>
+                            <div>
+                                <p class="text-dark/80 leading-relaxed">
+                                    罗布斯塔咖啡豆口感浓烈、苦涩，咖啡因含量比阿拉比卡咖啡豆更高。它常用于意式浓缩咖啡和速溶咖啡，对环境变化和疾病的抵抗力更强。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-dark/70">口感浓烈、苦涩</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-dark/70">咖啡因含量更高</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-dark/70">对环境和疾病抵抗力强</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 利比里卡咖啡 -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden card-hover">
+                    <div class="bg-primary/10 px-6 py-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-2xl font-semibold text-dark">利比里卡咖啡</h3>
+                            <span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">鲜为人知</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="rounded-lg overflow-hidden mb-4">
+                            <img src="./1_3.jpeg" alt="利比里卡咖啡" class="w-full h-48 object-cover rounded-lg">
+                        </div>
+                        <div class="flex items-start mb-4">
+                            <i class="fa fa-leaf text-primary text-2xl mt-1 mr-3"></i>
+                            <div>
+                                <p class="text-dark/80 leading-relaxed">
+                                    利比里卡咖啡（Liberica）是一种鲜为人知的咖啡品种。19世纪末，一场疾病几乎摧毁了阿拉比卡咖啡的全部产量，利比里卡咖啡因此声名鹊起。它主要产于菲律宾，现在很难找到。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-dark/70">19世纪末因阿拉比卡疾病流行而兴起</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-dark/70">主要产于菲律宾</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-dark/70">贸易受限，现在很难找到</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 埃克塞尔萨咖啡 -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden card-hover">
+                    <div class="bg-primary/10 px-6 py-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-2xl font-semibold text-dark">埃克塞尔萨咖啡</h3>
+                            <span class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full">利比里卡亚种</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="rounded-lg overflow-hidden mb-4">
+                            <img src="./1_4.jpeg" alt="埃克塞尔萨咖啡" class="w-full h-48 object-cover rounded-lg">
+                        </div>
+                        <div class="flex items-start mb-4">
+                            <i class="fa fa-leaf text-primary text-2xl mt-1 mr-3"></i>
+                            <div>
+                                <p class="text-dark/80 leading-relaxed">
+                                    埃克塞尔萨咖啡（Excelsa）实际上是利比里卡咖啡的一个亚种。它非常独特，生长在高达20英尺的树上，风味浓郁，主要用于混合咖啡，增添风味，而非直接出售。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-dark/70">利比里卡咖啡的亚种</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-dark/70">生长在高达20英尺的树上</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-dark/70">主要用于混合咖啡增添风味</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 咖啡品种 -->
+        <section id="varieties" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-dark text-center">咖啡品种</h2>
+            <div class="bg-white rounded-2xl shadow-xl p-8 card-hover">
+                <h3 class="text-2xl font-semibold text-primary mb-6">了解咖啡品种</h3>
+                <p class="text-dark/80 leading-relaxed mb-6">
+                    咖啡品种包括自然产生的品种，以及突变和杂交品种（通过相互杂交而"鼓励"生长的植物）。对于普通咖啡消费者来说，不必过于担心品种，但优秀的咖啡烘焙商会在包装上标注咖啡品种，以帮助消费者了解咖啡的特点。
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-primary/5 rounded-xl p-5 card-hover">
+                        <div class="rounded-lg overflow-hidden mb-4">
+                            <img src="./3.jpeg" alt="自然品种" class="w-full h-36 object-cover rounded-lg">
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <i class="fa fa-seedling text-primary text-2xl mr-3"></i>
+                            <h4 class="text-xl font-semibold text-dark">自然品种</h4>
+                        </div>
+                        <p class="text-dark/70 leading-relaxed">
+                            在自然环境中通过自然授粉和繁殖形成的咖啡品种，适应特定的地理和气候条件。
+                        </p>
+                    </div>
+                    <div class="bg-primary/5 rounded-xl p-5 card-hover">
+                        <div class="rounded-lg overflow-hidden mb-4">
+                            <img src="./4.jpg" alt="突变品种" class="w-full h-36 object-cover rounded-lg">
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <i class="fa fa-magic text-primary text-2xl mr-3"></i>
+                            <h4 class="text-xl font-semibold text-dark">突变品种</h4>
+                        </div>
+                        <p class="text-dark/70 leading-relaxed">
+                            在自然生长过程中发生基因突变而形成的新品种，具有与原品种不同的特性。
+                        </p>
+                    </div>
+                    <div class="bg-primary/5 rounded-xl p-5 card-hover">
+                        <div class="rounded-lg overflow-hidden mb-4">
+                            <img src="./5.jpg" alt="杂交品种" class="w-full h-36 object-cover rounded-lg">
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <i class="fa fa-flask text-primary text-2xl mr-3"></i>
+                            <h4 class="text-xl font-semibold text-dark">杂交品种</h4>
+                        </div>
+                        <p class="text-dark/70 leading-relaxed">
+                            通过人工干预，将不同品种的咖啡树进行杂交，培育出具有优良特性的新品种。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <i class="fa fa-coffee text-white text-2xl mr-2"></i>
+                        <h3 class="text-2xl font-bold text-white">咖啡科普</h3>
+                    </div>
+                    <p class="text-white/70 mt-2">探索咖啡的世界，了解咖啡的魅力</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#intro" class="text-white/70 hover:text-white transition-colors">咖啡文化</a>
+                    <a href="#beans" class="text-white/70 hover:text-white transition-colors">咖啡豆种类</a>
+                    <a href="#varieties" class="text-white/70 hover:text-white transition-colors">咖啡品种</a>
+                </div>
+            </div>
+            <div class="border-t border-white/10 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-white/50 text-sm">© 2026 咖啡科普. 保留所有权利.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="text-white/50 hover:text-white transition-colors">
+                        <i class="fa fa-weixin"></i>
+                    </a>
+                    <a href="#" class="text-white/50 hover:text-white transition-colors">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-white/50 hover:text-white transition-colors">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 回到顶部按钮 -->
+    <button id="backToTop" class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-primary text-white shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            const backToTop = document.getElementById('backToTop');
+            
+            if (window.scrollY > 100) {
+                nav.classList.add('shadow-md');
+                nav.classList.remove('shadow-sm');
+                backToTop.classList.remove('opacity-0', 'invisible');
+                backToTop.classList.add('opacity-100', 'visible');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.add('shadow-sm');
+                backToTop.classList.add('opacity-0', 'invisible');
+                backToTop.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // 回到顶部按钮
+        document.getElementById('backToTop').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 页面加载动画
+        document.addEventListener('DOMContentLoaded', function() {
+            // 为每个部分添加淡入效果
+            const sections = document.querySelectorAll('section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            sections.forEach(section => {
+                section.classList.add('transition-all', 'duration-700', 'ease-out');
+                section.classList.add('opacity-0', 'translate-y-10');
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
